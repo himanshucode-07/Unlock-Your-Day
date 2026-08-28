@@ -1,16 +1,13 @@
-
-
-
+import Sandbox from "./Sandbox";
+import { AppProvider } from "./context/AppContext";
 function App() {
-  
-
   return (
     <>
-     <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+      <AppProvider>
+        <Sandbox />
+      </AppProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
