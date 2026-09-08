@@ -8,6 +8,10 @@ export default {
         accent: "#FF7E67",
         textMain: "#3A3A3A",
       },
+      fontFamily: {
+        display: ["Playfair Display", "serif"],
+        body: ["Poppins", "sans-serif"],
+      },
     },
   },
   plugins: [],
