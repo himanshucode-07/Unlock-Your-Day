@@ -1,6 +1,7 @@
 import { createContext, useContext } from "react";
 import { useReducer } from "react";
 
+
 const AppContext = createContext(null);
 
 function reducer(state, action) {
@@ -27,8 +28,11 @@ function DisplayNumber() {
   return <h1>{number}</h1>;
 }
 
+
+
 function Sandbox() {
   const [number, dispatch] = useReducer(reducer, 0);
+
 
   return (
     <>
@@ -53,6 +57,7 @@ function Sandbox() {
           <DisplayNumber />
         </AppContext.Provider>
       </div>
+
     </>
   );
 }
