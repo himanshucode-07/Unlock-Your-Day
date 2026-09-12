@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 import { useReducer } from "react";
-
+import { motion, AnimatePresence } from "framer-motion";
 
 const AppContext = createContext(null);
 
@@ -24,15 +24,12 @@ function reducer(state, action) {
 }
 
 function DisplayNumber() {
-  const {number, dispatch}= useContext(AppContext)
+  const { number, dispatch } = useContext(AppContext);
   return <h1>{number}</h1>;
 }
 
-
-
 function Sandbox() {
   const [number, dispatch] = useReducer(reducer, 0);
-
 
   return (
     <>
@@ -58,6 +55,17 @@ function Sandbox() {
         </AppContext.Provider>
       </div>
 
+      <AnimatePresence>
+  {number === 0 && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      Zero hai abhi!
+    </motion.div>
+  )}
+</AnimatePresence>
     </>
   );
 }
