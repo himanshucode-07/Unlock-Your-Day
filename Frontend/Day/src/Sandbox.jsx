@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 import { useReducer } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 
 const AppContext = createContext(null);
 
@@ -24,7 +24,7 @@ function reducer(state, action) {
 }
 
 function DisplayNumber() {
-  const { number, dispatch } = useContext(AppContext);
+  const { number } = useContext(AppContext);
   return <h1>{number}</h1>;
 }
 

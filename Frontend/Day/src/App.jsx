@@ -2,7 +2,7 @@ import { AppProvider } from "./context/AppContext";
 import LockedScreen from "./acts/Locked/LockedScreen";
 import { useContext } from "react";
 import { AppContext } from "./context/AppContext";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 
 function App() {
   return (

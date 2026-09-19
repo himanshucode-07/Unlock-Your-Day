@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 
 function LockedScreen() {
-  const { currentAct, dispatch } = useContext(AppContext);
+  const { dispatch } = useContext(AppContext);
   const timeLeft = useCountdown(new Date("2026-12-25"));
   return (
     <SectionWrapper>
