@@ -1,6 +1,10 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect } from "react";
 import { useReducer } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { gsap } from "gsap"
+
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger)
 
 const AppContext = createContext(null);
 
@@ -31,8 +35,14 @@ function DisplayNumber() {
 function Sandbox() {
   const [number, dispatch] = useReducer(reducer, 0);
 
+  useEffect(() => {
+    gsap.from("#test-box", { opacity: 0, x: -100, duration: 1 });
+  }, []);
+
   return (
     <>
+
+          <div id="test-box">GSAP Test</div>
       <div className="text-center mt-50px">
         <h1>number {number}</h1>
 
@@ -66,6 +76,8 @@ function Sandbox() {
     </motion.div>
   )}
 </AnimatePresence>
+
+
     </>
   );
 }

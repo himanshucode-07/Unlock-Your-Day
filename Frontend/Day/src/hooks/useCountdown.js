@@ -16,6 +16,4 @@ function useCountdown(targetDate) {
     return time;
 }
 
-
-
 export default useCountdown;

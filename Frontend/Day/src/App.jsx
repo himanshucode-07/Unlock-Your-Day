@@ -3,10 +3,12 @@ import LockedScreen from "./acts/Locked/LockedScreen";
 import { useContext } from "react";
 import { AppContext } from "./context/AppContext";
 import { motion, AnimatePresence } from "motion/react";
+import Sandbox from "./Sandbox";
 
 function App() {
   return (
     <AppProvider>
+      <Sandbox />
       <AppContent />
     </AppProvider>
   );
